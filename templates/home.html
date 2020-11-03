@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+{% block body %}
+<h2>EXPORT Table</h2>
+<table>
+  <tr>
+    <th>#</th>
+    <th>Name</th>
+    <th>Number</th>
+  </tr>
+      {% for datum in data %}
+          <tr>
+              <td>{{ datum.id }}</td>
+              <td>{{ datum.name }}</td>
+              <td>{{ datum.number }}</td>
+          </tr>
+      {% endfor %}
+</table>
+    <button type="submit"><a href="{% url 'export' %}">Export</a></button>
+{% endblock %}
+
